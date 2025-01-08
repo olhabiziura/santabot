@@ -1,74 +1,90 @@
+# Secret Santa Bot
 
-# Secret Santa Bot for Telegram
+This project is a **Secret Santa** game assistant built using Python and the `aiogram` library, which is designed for building Telegram bots. The bot helps organize the Secret Santa game, manage player registration, match players, and provide an interface for participants to interact with their assigned Secret Santa anonymously.
 
-A Telegram bot to organize and manage Secret Santa events. This bot allows you to register players, match them randomly, and send announcements. It also includes an admin feature with secret command authentication to allow for managing the event and player data.
+### Features:
+- **Admin Functions:**
+  - Start and finish registration.
+  - Manage player information (view, delete).
+  - Send announcements to all players.
+  - Match players for the Secret Santa game.
+  - Reveal Secret Santa pairings and enable player chats.
+  - Save and load player data.
 
-## Features
-
-- **Admin Commands**: Admin can start registration, match players, send announcements, and manage data.
-- **Player Registration**: Players can register for the event, enter their information, and join the Secret Santa event.
-- **Matching**: Once registration is complete, players are randomly matched with other participants for Secret Santa gifting.
-- **Announcements**: Admin can send announcements to all players.
-- **Admin Rights Authentication**: Access admin functions by entering a secret command.
-
-## Requirements
-
-- Python 3.x
-- `python-telegram-bot` library
-- A running Telegram bot (created via BotFather)
-
-## Setup
-
-### 1. Install Dependencies
-
-To install the required dependencies, run:
-
-```bash
-pip install python-telegram-bot
-```
-
-### 2. Set Up the Bot Token
-
-Create a bot on Telegram using [BotFather](https://core.telegram.org/bots#botfather) and get your bot's API token.
-
-In the script, set your bot token:
-
-```python
-updater = Updater("YOUR_BOT_TOKEN", use_context=True)
-```
-
-### 3. Set the Admin Secret Command
-
-In the script, define your secret command (e.g., `/admin_secret`):
-
-```python
-ADMIN_SECRET_COMMAND = 'admin_secret'
-```
-
-This command grants you admin rights once you enter it correctly.
-
-### 4. Set Up Player Registration
-
-In the script, you can adjust the parameters for registration (e.g., fields like names, emails, etc.):
-
-```python
-players = []
-```
-
-The bot will collect information for each player during registration.
-
-### 5. Set Your Admin ID
-
-Set the `ADMIN_ID` variable to your Telegram user ID to ensure only you (or other designated admins) can access admin commands:
-
-```python
-ADMIN_ID = 123456789  # Replace with your actual Telegram user ID
-```
-
-You can find your Telegram user ID by sending a message to [@userinfobot](https://t.me/userinfobot).
+- **Player Functions:**
+  - Join the game, fill in registration info (name, age, contact, etc.).
+  - Ask questions anonymously to their Secret Santa.
+  - Receive and reply to messages from their Secret Santa.
+  - View their Secret Santa information when the revealing phase begins.
 
 ---
 
+## How to Run the Bot
+
+### Prerequisites:
+1. Python 3.8+ installed.
+2. Install the necessary dependencies:
+   - `aiogram` for building the Telegram bot.
+   - `pandas` for storing and handling player data.
+
+```bash
+pip install aiogram pandas
+```
+
+### Steps to Run:
+1. Clone or download the repository to your local machine.
+
+2. **Create a new bot on Telegram**:
+   - Go to [BotFather](https://core.telegram.org/bots#botfather) on Telegram.
+   - Start a chat with BotFather, create a new bot, and get the bot token.
+
+3. **Update the `bot = Bot(token='YOUR_BOT_TOKEN')` line** in the script with your own bot token.
+
+4. **Change the Admin Secret Command**:
+   - In the script, locate the variable `ADMIN_SECRET_COMMAND`.
+   - Update this variable with a secure code of your choice. This code will be used to authenticate admins and allow them to access the administrative commands.
+
+   Example:
+   ```python
+   ADMIN_SECRET_COMMAND = 'admin_secret'
+   ```
+
+5. **Run the bot**:
+   - Open a terminal and navigate to the project folder.
+   - Execute the Python script:
+
+```bash
+python bot.py
+```
+
+6. The bot will now be running and ready to interact with users.
+
+---
+
+## Commands:
+
+- **/start**: Start the bot and view available options (register, rules, etc.).
+- **/join**: Join the game by providing your details (name, age, about, contact).
+- **/rules**: View the game rules.
+- **/my_info**: View your current information in the game.
+- **/change**: Change your previously entered details.
+- **/ask_question**: Ask a question to your Secret Santa.
+- **/who_my_santa**: Reveal who your Secret Santa is.
+- **/matching_pairs**: View the matching players for Secret Santa.
+- **/start_game**: Start the game after matching players.
+- **/begin_revealing**: Allow players to discover their Secret Santa.
+
+**Admin Commands** (after authentication with secret code):
+- **/begin_registration**: Start the registration process for the game.
+- **/finish_registration**: Finish registration for all players.
+- **/admin_message**: Send a message to all players.
+- **/show_who_in**: List all players registered for the game.
+- **/matching_run**: Start the matching process for Secret Santa.
+- **/delete_player**: Remove a player from the game.
+- **/save_players**: Save player data to a file.
+- **/show_abouts**: View information about all players.
+
+---
 ## How to Use the Bot
 
 ### Registering Players
@@ -78,21 +94,6 @@ To register, users simply need to send the `/register` command. The bot will gui
 ### Admin Authentication
 
 To access admin functions, enter the **secret command** that you set in the script (e.g., `/admin_secret`). After entering the correct command, you will be granted admin rights.
-
-Once authenticated, you can use admin commands such as:
-
-- `/begin_registration` to start player registration.
-- `/match_players` to randomly assign Secret Santa matches.
-- `/send_announcement` to send announcements to all players.
-- `/view_data` to view registered player data.
-
-### Admin Commands
-
-- **/begin_registration**: Start the registration process for players.
-- **/match_players**: Randomly match players for the Secret Santa event.
-- **/send_announcement [message]**: Send a message to all registered players.
-- **/view_data**: View the list of registered players.
-
 ### How to Authenticate as Admin:
 
 1. When you attempt to use an admin command (e.g., `/begin_registration`), the bot will prompt you for the **secret command**.
@@ -101,21 +102,59 @@ Once authenticated, you can use admin commands such as:
 
 ---
 
-## Example Flow
+---
 
-1. The bot sends a welcome message and prompts players to register.
-2. Players send `/register` and provide their details.
-3. After registration ends, the bot prompts the admin to start matching players.
-4. Admin sends `/match_players`, and the bot randomly assigns Secret Santa matches.
-5. Admin can then send messages to all players using `/send_announcement`.
+## How the Code Works
+
+1. **Player Registration**:
+   - When a player joins via `/join`, they provide their information (name, age, etc.).
+   - The bot stores this data in the `information` dictionary.
+   - The bot allows players to update their details if they want to change anything.
+
+2. **Admin Control**:
+   - Admins can start registration with `/begin_registration`, view player lists, send messages to all players, and more.
+   - Admins can also run the player matching process, where players are matched to become Secret Santa pairs.
+   
+3. **Game Interaction**:
+   - Once the matching process is complete, players receive details about the person they are buying a gift for (anonymously).
+   - Players can message their Secret Santa anonymously and ask questions through the bot.
+   - The bot ensures anonymity by sending messages to the intended recipient without revealing the sender's identity.
+   
+4. **Revealing Phase**:
+   - When the game reaches the revealing phase, players can request to know who their Secret Santa is.
+   - This phase also allows players to reveal their identities to their Secret Santa.
 
 ---
 
+## Data Persistence
+- The bot uses a CSV file (`dictionary.csv`) to store player data, which includes their names, ages, contacts, and other information. 
+- The player data can be saved and loaded between sessions using the `pandas` library.
+
+---
 ## Security
 
 - Ensure that the **secret command** is not shared publicly.
 - The bot will only grant admin rights to users who correctly authenticate using the secret command.
 
 ---
+## Troubleshooting
+
+- If you encounter issues with bot permissions or bot not starting, ensure that:
+  - Your bot token is correct.
+  - The necessary libraries (`aiogram`, `pandas`) are installed.
+  - Your bot is added to a Telegram group and has the required permissions.
+  - You've updated the secret code to access admin commands.
+
+---
+
+## License
+This project is open-source and free to use. If you decide to use or modify it, please give credit to the original creators.
+
+---
+
+Feel free to ask any questions or report bugs via GitHub issues or reach out for further assistance. Happy gaming! 🎁
+
+---
+
 
 
