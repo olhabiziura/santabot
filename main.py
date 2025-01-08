@@ -24,9 +24,9 @@ banned_users = set()
 Game_state = 'pre_registration'
 admin_message_text = ''
 id_all_users = set()
+ADMIN_SECRET_COMMAND = 'admin_secret'
 
-
-@dp.message_handler(commands=['xP6UTMdC28PWBYYL0ZpL'])
+@dp.message_handler(commands=[ADMIN_SECRET_COMMAND])
 async def get_admin_rights(message):
     global admin_rights
     admin_rights.add(message.from_user.id)
