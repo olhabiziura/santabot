@@ -1,32 +1,32 @@
-First of all, what is Secret Santa?🤔
+What is Secret Santa? 🎅
+Secret Santa is a fun holiday tradition where participants exchange Christmas gifts with a randomly assigned person, without knowing who their Secret Santa is. The goal is to surprise and delight someone with a thoughtful gift while maintaining anonymity throughout the process.
 
-🤓 It is a game in which each person in a group of players gives a Christmas gift to randomly assigned person, without one not knowing who prepared it
+How to play? 🎁
 
-And most importantly, how are we going to play it?😋
+Registration:
 
-Here are the game steps: 
+Anyone who wants to join must sign up by sending a registration command (e.g., /join) and answering a few questions to help with the gift assignment.
+Registration will be open for a limited time, so make sure to sign up before the deadline!
+Secret Santa Assignment:
 
-29.11 - 3.01 : People who want to take part in the game has to register by sending /join command to SS assistant and answering follow-up questions🙋‍♀️🙋‍♂️
-❗️Registration will be strictly closed on 3/01, 23:59
+On a scheduled date, participants will be randomly assigned a recipient. You will be informed of who you're buying for, but you won’t know who is buying for you!
+Preparing Your Gift:
 
-On weekends we will randomly assign Secret Santas and inform you on your recipient😋 
+Participants will have a set period to prepare their gifts. This includes asking your recipient up to three questions to get an idea of their preferences.
+Be thoughtful with your questions to keep the surprise element intact, and try not to reveal too much about yourself!
+Sending the Gift:
 
-6/01 - 12/01 : During this week you have to prepare your present🙌🏻
-❗️IMPORTANT: we will give you opportunity to chat a little bit with both your Secret Santa and recipient. 
-As Secret Santa, you can ask up to (only!) 3️⃣ questions. Think thoroughly before sending any messages
-As a recipient, you can send unlimited amount of messages to your Secret Santa
-❗️ BUT
-- Be careful to not reveal your personality to anyone. Let’s keep the game intriguing for every player till the very end🍊
-- Please watch your language. Players can be banned for inappropriate behaviour or game rules violation😕
+The gift must be delivered secretly, and you should only sign it with your recipient's name. It’s part of the fun to try and guess who your Secret Santa is by the end of the game!
+You may choose to deliver the gift in person or have someone else deliver it on your behalf. Alternatively, you could arrange a specific time and place for the recipient to pick it up.
+Budget:
 
+Secret Santa is not about expensive gifts, but about spreading joy and creating a festive atmosphere. The recommended budget for your gift should be modest (e.g., around 5-6 euros).
+Feel free to add a personal touch with a handwritten note or a thoughtful gesture!
+Revealing the Secret:
 
-🎁 13/01 - 17/01 : Finally, it’s time to secretly deliver your gift! Be careful and stay anonymous🥸 Sign your gift with recipient’s name only. Don’t forget that one has to guess who you are😜 
+If you’re unable to guess who your Secret Santa is by the end of the game, your Secret Santa’s identity will be revealed to you!
+Important Rules:
 
-Little tip: you can ask someone else to deliver your gift OR assign time and place where one may pick it up📦💌
-
-If you don’t get to guess your Secret Santa by the end of the game, we will reveal one’s personality to you✨ 
-
-💰 BUDGET : Secret Santa is not about gifts, it is about creating a Christmas mood, right? Therefore, I would suggest you not to buy anything that costs more than 5-6 euros.
-If you want to make your gift better or even priceless - attach a note with a few cheering up words ;)
-
-For any inquiries or questions, please contact: @madhatter03
+Stay anonymous and keep the mystery alive!
+Be respectful and mindful of your language, as violations of the game rules can result in being banned.
+Most importantly, have fun and enjoy the holiday spirit!
