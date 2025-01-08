@@ -1,6 +1,3 @@
-Here's the complete updated README file:
-
----
 
 # Secret Santa Bot for Telegram
 
@@ -45,7 +42,7 @@ updater = Updater("YOUR_BOT_TOKEN", use_context=True)
 In the script, define your secret command (e.g., `/admin_secret`):
 
 ```python
-ADMIN_SECRET_COMMAND = '/admin_secret'
+ADMIN_SECRET_COMMAND = 'admin_secret'
 ```
 
 This command grants you admin rights once you enter it correctly.
@@ -121,10 +118,4 @@ Once authenticated, you can use admin commands such as:
 
 ---
 
-## License
 
-This project is licensed under the MIT License.
-
----
-
-Let me know if you need further adjustments!
